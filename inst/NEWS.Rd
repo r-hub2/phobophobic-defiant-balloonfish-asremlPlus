@@ -1,5 +1,43 @@
 \name{news}
 \title{News for Package asremlPlus}
+\section{asremlPlus Version 4.4.46 (2025-02-15}{
+  \itemize{
+  \item Fix bug in newfit.asreml that arises when checking that terms supplied via its \code{set.terms} argument have been previously fitted. This bug affected all of the model modification and selection functions, for example changeModelOnIC.asrtests, testranfix.asrtests and changeTerms.asrtests, because they call newfit.asreml to change the fitted model.
+  \item Fix bug in using addSpatialModel.asrtests, addSpatialModelOnIC.asrtests and chooseSpatialModelOnIC.asrtests to fit models involving \code{corb}.
+  \item Further tweaking of fitting spatial correlation models using addSpatialModel.asrtests, addSpatialModelOnIC.asrtests and chooseSpatialModelOnIC.asrtests to deal with problems with estimating spatial and Residual variances.
+  \item Fix bug in inforCriteria resulting from a change in asreml 4.2.0.362 in the way \code{Cfixed} is stored in the \code{asreml.object}.
+}}
+
+\section{asremlPlus Version 4.4.45 (2025-01-27}{
+  \itemize{
+  \item Add code to addSpatialModel.asrtests, addSpatialModelOnIC.asrtests and chooseSpatialModelOnIC.asrtests that removes singular P-spline terms (TP.CR.x) from the model.
+}}
+\section{asremlPlus Version 4.4.44 (2025-01-07}{
+  \itemize{
+  \item Fix minor bugs in fitting spatial correlation models using addSpatialModel.asrtests, addSpatialModelOnIC.asrtests and chooseSpatialModelOnIC.asrtests.
+  \item Fix a bug in rmboundary.asrtests that caused an error when there was a bound component in a \code{dsum} term. 
+  \item Modified newfit.asreml and setvariances.call to ensure that terms whose bounds and/or initial values have been previously set using setvariances.call continue to have these values set in subsequent model fits, provided they remain in the fitted model. This will be promulgated to the model modification and selection functions, for example changeModelOnIC.asrtests, testranfix.asrtests and changeTerms.asrtests, because they call newfit.asreml to change the fitted model.  
+}}
+\section{asremlPlus Version 4.4.43 (2024-12-10}{
+  \itemize{
+  \item Fix bug in getTestPvalue.asrtests that occurred when the terms in a \code{test.summary}   include text.
+}}
+\section{asremlPlus Version 4.4.42 (2024-11-15}{
+  \itemize{
+  \item Make sure that numerics in the components of an alldiffs objects are set to \code{NA_real_} when they are missing.
+}}
+\section{asremlPlus Version 4.4.41 (2024-11-06}{
+  \itemize{
+  \item Tweak the fitting of correlation models when using for addSpatialModel.asrtests, addSpatialModelOnIC.asrtests and chooseSpatialModelOnIC.asrtests and there are bound variance parameters.
+  \item Add the response name to the titles of the objects printed using print.asrtests and print.test.summary.
+  \item Add \code{absent.error} argument to function getTestEntry.asrtests to control whether an error occurs if \code{label} is absent from the \code{test.summary} terms component.
+  \item Add class \code{list} to \code{asrtests} objects. This means that the function within will now work with \code{asrtests} objects.
+  \item Revise the Ladybird vignettes to include the exploration of various choices of LSD values.
+}}
+\section{asremlPlus Version 4.4.40 (2024-10-27}{
+  \itemize{
+  \item Fix minor issue with building for CRAN.
+}}
 \section{asremlPlus Version 4.4.39 (2024-10-26}{
   \itemize{
   \item Fixed a bug in pickLSDstatistic that occurs when there is only one prediction for a level of a \code{factor.combination} specified using the argument \code{LSDby}.
